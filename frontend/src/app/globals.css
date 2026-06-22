@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --accent-yellow: #ecad0a;
+  --primary-blue: #209dd7;
+  --secondary-purple: #753991;
+  --navy-dark: #032147;
+  --gray-text: #888888;
+  --surface: #f3f5f8;
+  --surface-strong: #ffffff;
+  --stroke: rgba(3, 33, 71, 0.1);
+  --stroke-strong: rgba(3, 33, 71, 0.18);
+  --shadow: 0 20px 44px rgba(3, 33, 71, 0.1);
+  --card-shadow: 0 10px 24px rgba(3, 33, 71, 0.08);
+  --glow-blue: rgba(32, 157, 215, 0.08);
+  --glow-gold: rgba(236, 173, 10, 0.06);
+}
+
+@theme inline {
+  --color-background: var(--surface);
+  --color-foreground: var(--navy-dark);
+  --font-sans: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    radial-gradient(circle at 14% 12%, var(--glow-blue) 0%, transparent 46%),
+    radial-gradient(circle at 88% 84%, var(--glow-gold) 0%, transparent 50%),
+    linear-gradient(170deg, #f4f7fa 0%, #f3f5f8 100%);
+  color: var(--navy-dark);
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: var(--font-display), "Segoe UI", sans-serif;
+}
+
+.soft-grid {
+  background-image:
+    linear-gradient(to right, rgba(3, 33, 71, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(3, 33, 71, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.panel-glass {
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  box-shadow: var(--shadow);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 360ms ease-out both;
+}
